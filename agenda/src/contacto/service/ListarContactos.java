@@ -7,28 +7,24 @@ import java.util.List;
 
 public class ListarContactos {
     // Lista de todos los contactos registrados
-    public final List<Contacto> contactos = new ArrayList<>();
+    public final List<Contacto> contacto = new ArrayList<>();
 
     public List<Contacto> getContactos() {
-        return contactos;
-    }
-
-    public void AgregarContacto(Contacto contacto){
-        contactos.add(contacto);
+        return contacto;
     }
 
     public void listarContactos(){
-        if (contactos.isEmpty()){
+        if (contacto.isEmpty()){
             System.out.println("No hay contactos registrados en la agenda");
             return;
         }
-        contactos.sort(
+        contacto.sort(
                 Comparator.comparing(Contacto::getNombre, String.CASE_INSENSITIVE_ORDER)
                         .thenComparing(Contacto::getApellido, String.CASE_INSENSITIVE_ORDER)
         );
 
         System.out.println("Lista de contactos:");
-        for (Contacto contacto : contactos) {
+        for (Contacto contacto : contacto) {
             System.out.println(contacto.getNombre() + " " + contacto.getApellido() + " - " + contacto.getNumero());
         }
 
