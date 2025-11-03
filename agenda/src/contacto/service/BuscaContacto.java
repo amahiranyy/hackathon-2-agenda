@@ -16,6 +16,6 @@ public class BuscaContacto {
                 return contactoActual;
             }
         }
-        throw new ExceptionContactoNoExiste();
+        throw new ExceptionContactoNoExiste("El contacto no existe");
     }
 }
