@@ -7,5 +7,6 @@ import java.util.List;
 
 public class ListarContactos {
     // Lista de todos los contactos registrados
-    public final List<Contacto> contacto = new ArrayList<>();
+    public static List<Contacto> contacto = new ArrayList<>();
+
 }
