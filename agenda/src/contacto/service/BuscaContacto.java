@@ -6,7 +6,7 @@ import contacto.model.Contacto;
 import java.util.List;
 
 public class BuscaContacto {
-    public Contacto buscar(List<Contacto> contactos, String nombre, String apellido) throws ExceptionContactoNoExiste {
+    public Contacto buscar(List<Contacto> contacto, String nombreBuscado, String apellidoBuscado) throws ExceptionContactoNoExiste {
         String nombreBuscado = nombre == null ? "" : nombre.trim().toLowerCase() ;
         String apellidoBuscado = apellido == null ? "" : apellido.trim().toLowerCase();
         for (Contacto contactoActual : contactos){
