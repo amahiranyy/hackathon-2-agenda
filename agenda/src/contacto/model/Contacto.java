@@ -3,7 +3,7 @@ package contacto.model;
 public class Contacto {
     // Variables de instancia
     private String nombre;
-    private String apellido;
+    private String lastName;
     private String numero;
     // Metodo constructor
 
