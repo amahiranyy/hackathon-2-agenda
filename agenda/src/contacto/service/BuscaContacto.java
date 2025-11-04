@@ -21,10 +21,12 @@ public class BuscaContacto {
         throw new ExceptionContactoNoExiste("El contacto no existe");
     }
     // Metodo estático para usar directamente desde el menú principal
-    public static void ejecutar() {
+    public void ejecutar() {
         ListarContactos listarContactos= new ListarContactos();
         Scanner scanner = new Scanner(System.in);
         BuscaContacto buscador = new BuscaContacto();
+
+        System.out.println("** Buscar un contacto **");
 
         System.out.print("Nombre del contacto: ");
         String nombre = scanner.nextLine();

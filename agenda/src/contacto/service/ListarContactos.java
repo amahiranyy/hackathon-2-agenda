@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ListarContactos {
     // Lista de todos los contactos registrados
-    public final List<Contacto> contacto = new ArrayList<>();
+    public static final List<Contacto> contacto = new ArrayList<>();
 
     public List<Contacto> getContactos() {
         return contacto;
@@ -28,6 +28,12 @@ public class ListarContactos {
             System.out.println(contacto.getNombre() + " " + contacto.getApellido() + " - " + contacto.getNumero());
         }
 
+    }
+
+    // Método ejecutar para integración con el menú
+    public void ejecutar() {
+        System.out.println("** Contactos **");
+        listarContactos();
     }
 
 }

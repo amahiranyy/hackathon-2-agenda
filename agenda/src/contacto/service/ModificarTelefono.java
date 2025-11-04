@@ -24,16 +24,25 @@ public class ModificarTelefono {
     }
 
     // integración con el menú
-    public static void ejecutar() {
+    public void ejecutar() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("** Modificar el número de teléfono de un contacto **");
         System.out.print("Ingrese el nombre del contacto: ");
         String nombre = scanner.nextLine();
         System.out.print("Ingrese el apellido del contacto: ");
         String apellido = scanner.nextLine();
-        System.out.print("Ingrese el nuevo número de teléfono: ");
-        String nuevoTelefono = scanner.nextLine();
+        // Verificar si el contacto existe antes de pedir el nuevo número
+        ExisteContacto existeContacto = new ExisteContacto();
+        boolean existe = existeContacto.existeContacto(nombre, apellido);
 
-        ModificarTelefono mt = new ModificarTelefono();
-        mt.modificarTelefono(nombre, apellido, nuevoTelefono);
+        if (existe) {
+            System.out.print("Ingrese el nuevo número de teléfono: ");
+            String nuevoTelefono = scanner.nextLine();
+
+            ModificarTelefono mt = new ModificarTelefono();
+            mt.modificarTelefono(nombre, apellido, nuevoTelefono);
+        } else {
+            System.out.println("❌ El contacto " + nombre + " " + apellido + " no existe en la agenda.");
+        }
     }
 }
