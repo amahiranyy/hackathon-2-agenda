@@ -13,11 +13,16 @@ public class BuscaContacto {
         String apellidoBuscado = apellido == null ? "" : apellido.trim().toLowerCase();
         for (Contacto contactoActual : contacto){
             String nombreActual = contactoActual.getNombre() == null ? "" : contactoActual.getNombre().trim().toLowerCase();
-            String apellidoActual = contactoActual.getApellido() == null ? "" : contactoActual.getApellido().trim().toLowerCase() ;
-            if  (nombreActual.equals(nombreBuscado) && apellidoActual.equals(apellidoBuscado)){
+            String apellidoActual = contactoActual.getApellido() == null ? "" : contactoActual.getApellido().trim().toLowerCase();
+
+            // Compara nombre y apellido normalizados
+            if (nombreActual.equals(nombreBuscado) && apellidoActual.equals(apellidoBuscado)) {
+                // Si hay coincidencia exacta, se devuelve el contacto encontrado
                 return contactoActual;
             }
         }
+
+        // Si se recorrió toda la lista y no se encontró coincidencia, se lanza una excepción personalizada
         throw new ExceptionContactoNoExiste("El contacto no existe");
     }
     // Metodo estático para usar directamente desde el menú principal
